@@ -1,0 +1,3 @@
+Advanced Radar Systems and Signal Processing for Defense Applications
+
+The interview board will evaluate the candidate's knowledge and expertise in modern radar technologies, including phased array systems, MIMO radar architectures, and adaptive signal processing techniques. Topics will cover radar system design principles, beamforming algorithms, target detection and tracking, electronic countermeasures, and integration of artificial intelligence in radar systems. The candidate should demonstrate understanding of both theoretical foundations and practical implementation challenges in defense radar applications.

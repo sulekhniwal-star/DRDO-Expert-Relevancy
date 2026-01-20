@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Dr. Rajesh Kumar",
+    "profile_text": "Senior scientist with expertise in radar systems, signal processing, and electronic warfare. Specialized in phased array antennas, MIMO radar, and adaptive beamforming algorithms. Published 45+ research papers in IEEE journals. Led development of indigenous radar systems for defense applications.",
+    "years_experience": 18
+  },
+  {
+    "name": "Dr. Priya Sharma",
+    "profile_text": "Principal researcher in artificial intelligence and machine learning for defense applications. Expert in computer vision, deep learning, autonomous systems, and cybersecurity. Developed AI-based threat detection systems and unmanned vehicle navigation algorithms.",
+    "years_experience": 12
+  },
+  {
+    "name": "Dr. Anil Verma",
+    "profile_text": "Distinguished scientist in missile technology and propulsion systems. Extensive experience in solid rocket motors, guidance systems, and trajectory optimization. Key contributor to indigenous missile development programs and ballistic missile defense systems.",
+    "years_experience": 22
+  },
+  {
+    "name": "Dr. Sunita Patel",
+    "profile_text": "Senior researcher in materials science and nanotechnology for defense applications. Specialized in advanced composites, stealth materials, and protective coatings. Developed lightweight armor materials and radar-absorbing structures for military platforms.",
+    "years_experience": 15
+  },
+  {
+    "name": "Dr. Vikram Singh",
+    "profile_text": "Principal scientist in communication systems and network security. Expert in secure communications, cryptography, software-defined radio, and tactical communication networks. Led development of encrypted communication systems for armed forces.",
+    "years_experience": 20
+  }
+]
