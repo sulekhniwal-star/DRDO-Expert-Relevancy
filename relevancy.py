@@ -1,20 +1,20 @@
 """
-Relevancy computation using weighted scoring
+Relevancy score computation for DRDO RAC expert selection
 """
 
-def compute_relevancy(subject_score, profile_score, experience_score, w1=0.4, w2=0.4, w3=0.2):
+def compute_relevancy_score(subject_matching_score, profile_matching_score, experience_score, w1=0.4, w2=0.4, w3=0.2):
     """
-    Compute final relevancy score using weighted combination
+    Compute final relevancy score for expert suitability prediction
     
     Args:
-        subject_score: Expert-subject similarity (0-1)
-        profile_score: Expert-candidate similarity (0-1)
+        subject_matching_score: Expert-subject domain match (0-1)
+        profile_matching_score: Expert-candidate profile match (0-1)
         experience_score: Experience score (0-1)
-        w1: Weight for subject score (default: 0.4)
-        w2: Weight for profile score (default: 0.4)
-        w3: Weight for experience score (default: 0.2)
+        w1: Weight for subject matching (default: 0.4)
+        w2: Weight for profile matching (default: 0.4)
+        w3: Weight for experience (default: 0.2)
     
     Returns:
-        Final relevancy score (0-1)
+        Relevancy score for suitability prediction (0-1)
     """
-    return w1 * subject_score + w2 * profile_score + w3 * experience_score
+    return w1 * subject_matching_score + w2 * profile_matching_score + w3 * experience_score

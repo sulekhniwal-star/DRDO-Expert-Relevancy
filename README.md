@@ -1,18 +1,25 @@
-# DRDO Expert Relevancy Matching System
+# DRDO RAC Expert Matching System
 
-A lightweight AI system that matches domain experts to interview board subjects and candidates using text similarity analysis.
+A lightweight AI system for Recruitment and Assessment Centre (RAC) under DRDO to match domain experts with interview board subjects and candidates' area of expertise.
 
 ## Problem Statement
 
-In defense research organizations like DRDO, selecting the most relevant experts for interview boards is crucial for fair and effective candidate evaluation. This system automates expert selection by computing relevancy scores based on subject expertise, candidate profile alignment, and experience levels.
+RAC under DRDO, Ministry of Defence conducts interviews for recommending candidates under recruitment, assessment and for sponsorship to acquire higher qualification. The challenge is to manually match profile of subject experts w.r.t. interview board subject and candidates' area of expertise.
+
+## Solution Overview
+
+- **Matching Score Computation**: Provides matching scores for experts whose domain matches w.r.t. interview board subject and candidates area of expertise
+- **Relevancy Score Prediction**: Predicts suitability of expert for a particular interview board through a relevancy score
+- **Profile Score Analysis**: Determines profile score for each selected expert w.r.t. profile of candidates to be interviewed
+- **Automated Expert Selection**: Ranks experts based on comprehensive scoring for interview board composition
 
 ## How It Works
 
-- **Text Similarity Analysis**: Uses word frequency vectors and cosine similarity to compute semantic similarity between expert profiles, interview subjects, and candidate backgrounds
-- **Multi-Factor Scoring**: Combines subject match (40%), profile match (40%), and experience score (20%) for comprehensive evaluation
-- **Rule-Based Experience Scoring**: Normalizes years of experience using a simple formula (min(1, years/25))
-- **Automated Ranking**: Sorts experts by final relevancy score and displays top 5 candidates
-- **Clean Text Processing**: Standardizes all text inputs for consistent similarity computation
+- **Subject Matching Score**: Computes domain alignment between expert expertise and interview board subject
+- **Profile Matching Score**: Analyzes compatibility between expert profile and candidate's area of expertise
+- **Experience Scoring**: Normalizes years of experience for fair comparison
+- **Relevancy Score**: Combines all factors to predict expert suitability for interview board
+- **Suitability Prediction**: Categorizes experts as Highly Suitable, Suitable, or Less Suitable
 
 ## Folder Structure
 
@@ -21,8 +28,8 @@ In defense research organizations like DRDO, selecting the most relevant experts
 ├── main.py              # Main execution script
 ├── data_utils.py        # Data loading and text cleaning utilities
 ├── embedding_utils.py   # Text similarity functions (no external deps)
-├── scoring.py           # Individual scoring functions
-├── relevancy.py         # Final relevancy computation
+├── scoring.py           # Matching score functions
+├── relevancy.py         # Relevancy score computation
 ├── experts.json         # Expert profiles database
 ├── candidates.json      # Candidate profiles
 ├── subject.txt          # Interview board subject description
@@ -45,41 +52,44 @@ python main.py
 The system will automatically:
 - Load expert and candidate data
 - Process the interview subject
-- Compute relevancy scores for all experts
+- Compute matching scores and relevancy scores
+- Predict expert suitability for interview board
 - Display ranked results
 
 ## Sample Output
 
 ```
-DRDO Expert Relevancy Matching System
+DRDO RAC Expert Matching System
 ==================================================
-Subject: Advanced Radar Systems and Signal Processing for Defense Applications...
-Candidate: Arjun Mehta
+Interview Subject: Advanced Radar Systems and Signal Processing...
+Candidate Profile: Arjun Mehta
 
-Expert Relevancy Rankings:
+Expert Suitability Analysis:
 --------------------------------------------------------------------------------
 1. Dr. Rajesh Kumar
-   Subject Match:    0.847
-   Profile Match:    0.723
-   Experience Score: 0.720
-   Final Relevancy:  0.772
+   Subject Matching Score:  0.847
+   Profile Matching Score:  0.723
+   Experience Score:        0.720
+   Relevancy Score:         0.772
+   Suitability:             Highly Suitable
 
 2. Dr. Priya Sharma
-   Subject Match:    0.654
-   Profile Match:    0.681
-   Experience Score: 0.480
-   Final Relevancy:  0.630
+   Subject Matching Score:  0.654
+   Profile Matching Score:  0.681
+   Experience Score:        0.480
+   Relevancy Score:         0.630
+   Suitability:             Suitable
 
 ...
 ```
 
-## Notes
+## Technical Features
 
 - **Zero Dependencies**: Uses only built-in Python libraries
-- **Rule-Based Scoring**: Simple, interpretable scoring functions without complex ML pipelines
-- **Easy Extensibility**: Modular design allows easy modification of scoring weights and algorithms
+- **Rule-Based Scoring**: Simple, interpretable scoring functions
+- **Modular Design**: Easy modification of scoring weights and algorithms
 - **Completely Offline**: No external downloads or internet connection required
-- **Beginner-Friendly**: Clean, well-documented code suitable for learning and modification
+- **RAC-Specific**: Tailored for DRDO recruitment and assessment processes
 
 ## Customization
 
@@ -87,4 +97,4 @@ Expert Relevancy Rankings:
 - Add new experts in `experts.json`
 - Update candidate profiles in `candidates.json`
 - Change interview subject in `subject.txt`
-- Adjust experience scoring formula in `scoring.py`
+- Adjust suitability thresholds in `main.py`
